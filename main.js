@@ -1,4 +1,6 @@
 const themeSwitcher = document.getElementById("theme-switcher");
+const nav = document.getElementById("nav");
+const menuIcon = document.querySelector(".menu-icon");
 
 function darkMode() {
   themeSwitcher.children[0].textContent = "Dark Mode";
@@ -22,6 +24,16 @@ function switchTheme() {
     localStorage.setItem("theme", "light");
     lightMode();
   }
+}
+
+function toggleMenu() {
+  nav.classList.toggle("active");
+  menuIcon.classList.toggle("active");
+}
+
+function hideMenu() {
+  nav.classList.remove("active");
+  menuIcon.classList.remove("active");
 }
 
 themeSwitcher.addEventListener("click", switchTheme);
